@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: run-action
         id: run-action
-        uses: loicdiridollou/gha-assign-by-comment@v1.0.0
+        uses: loicdiridollou/gha-assign-by-comment@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
