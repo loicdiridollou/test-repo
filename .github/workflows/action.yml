@@ -1,0 +1,17 @@
+name: assign_review_by_comment by issue_comment
+on: [issue_comment, pull_request_review]
+
+jobs:
+  assign_review_by_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run-action
+        uses: loicdiridollou/gha-assign-by-comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          milliseconds: 1000
+
+      - name: Print Output
+        id: output
+        run: echo "${{ steps.run-action.outputs.time }}"
