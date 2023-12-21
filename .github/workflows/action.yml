@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run-action
-        uses: loicdiridollou/gha-assign-by-comment
+        uses: loicdiridollou/gha-assign-by-comment@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
