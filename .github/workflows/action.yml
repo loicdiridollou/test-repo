@@ -4,9 +4,11 @@ on: [issue_comment, pull_request_review]
 jobs:
   assign_review_by_comment:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: run-action
-        uses: loicdiridollou/gha-assign-by-comment@v1
+        id: run-action
+        uses: loicdiridollou/gha-assign-by-comment@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
