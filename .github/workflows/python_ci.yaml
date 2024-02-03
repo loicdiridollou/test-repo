@@ -15,9 +15,11 @@ jobs:
         run: python -c "import sys; print(sys.version)"
       - name: Install dependencies
         run: |
+          python -m venv venv
+          source venv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python lib/setup.py install
+          pip install .
       - name: Test with pytest
         run: |
           pytest lib -rxXs --cov-report=xml:coverage312.xml --cov lib
