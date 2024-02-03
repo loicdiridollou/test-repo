@@ -28,6 +28,6 @@ jobs:
           head_sha: ${{ github.event.pull_request.head.sha }}
           github_url: ${{ github.event.pull_request.head.repo.url }}
           github_ref: ${{ github.ref }}
-          project_name: sgm
+          project_name: test_repo
           path: coverage312.xml
         uses: loicdiridollou/gha-cov-publish@main
