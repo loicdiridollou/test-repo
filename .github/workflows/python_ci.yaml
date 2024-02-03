@@ -30,4 +30,4 @@ jobs:
           github_ref: ${{ github.ref }}
           project_name: sgm
           path: coverage311.xml
-        uses: loic-diridollou/gha-cov-publish@main
+        uses: loicdiridollou/gha-cov-publish@main
