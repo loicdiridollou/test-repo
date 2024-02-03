@@ -20,4 +20,4 @@ jobs:
           python lib/setup.py install
       - name: Test with pytest
         run: |
-          pytest lib --rxXs --cov-report=xml:coverage312.xml --cov lib
+          pytest lib -rxXs --cov-report=xml:coverage312.xml --cov lib
