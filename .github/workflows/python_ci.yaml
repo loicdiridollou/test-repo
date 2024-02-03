@@ -23,4 +23,4 @@ jobs:
       - name: Test with pytest
         run: |
           source venv/bin/activate
-          pytest lib -rxXs --cov-report=xml:coverage312.xml --cov lib
+          python -m pytest lib -rxXs --cov-report=xml:coverage312.xml --cov lib
