@@ -29,5 +29,5 @@ jobs:
           github_url: ${{ github.event.pull_request.head.repo.url }}
           github_ref: ${{ github.ref }}
           project_name: sgm
-          path: coverage311.xml
+          path: coverage312.xml
         uses: loicdiridollou/gha-cov-publish@main
