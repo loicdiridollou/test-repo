@@ -30,4 +30,6 @@ jobs:
           github_ref: ${{ github.ref }}
           project_name: test_repo
           path: coverage312.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: loicdiridollou/gha-cov-publish@main
