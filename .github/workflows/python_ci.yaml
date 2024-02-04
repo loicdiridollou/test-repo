@@ -6,19 +6,8 @@ jobs:
   build:
     runs-on: [ubuntu-latest]
     permissions:
-      # actions: write
-      # checks: write
-      # contents: write
-      # deployments: write
-      # id-token: write
-      # issues: write
-      # discussions: write
-      # packages: write
-      # pages: write
       pull-requests: write
-      # repository-projects: write
-      # security-events: write
-      # statuses: write
+      checks: write
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
@@ -29,7 +18,6 @@ jobs:
         run: python -c "import sys; print(sys.version)"
       - name: Install dependencies
         run: |
-          python -m venv venv
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python lib/setup.py install
