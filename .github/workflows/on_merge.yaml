@@ -10,4 +10,5 @@ jobs:
     steps:
       - name: Test event
         run: |
-          echo The PR was merged
+          echo ${{ github.event.pull_request.base.sha }};
+          echo ${{ github.event.pull_request.head.sha }};
