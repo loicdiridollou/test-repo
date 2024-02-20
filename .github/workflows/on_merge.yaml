@@ -8,5 +8,6 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: Test event
+        run: |
           echo The PR was merged
