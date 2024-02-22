@@ -1,0 +1,32 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+ignore = [
+    "E722",
+    "B008",  # function call in defaults
+    "I001",  # import order
+    "PLC1901",  # truthy strings
+]
+
+select = [
+    "E",
+    "F",
+    "W",
+    "B",
+    "I",
+    "A",
+    "PLC",
+    "UP",
+    "D",
+]
+
+pydocstyle.convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+"lib/**/__init__.py" = ["D"]
+
+[tool.isort]
+known_first_party = ["module_name"]
+profile = "black"
