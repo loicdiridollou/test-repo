@@ -31,7 +31,6 @@ requests==2.31.0
 ruff==0.2.0
 six==1.16.0
 SQLAlchemy==2.0.23
--e git+ssh://git@github.com/loicdiridollou/test-repo.git@0a9cbe134c77817508ff981d97ca40834f0ff067#egg=test_repo
 tomlkit==0.11.6
 typing_extensions==4.9.0
 urllib3==2.0.6
