@@ -9,5 +9,5 @@ setup(
     description="Description",
     author="Author",
     license="MIT",
-    package_dir={"": "."},
+    package_dir={"": "lib"},
 )
