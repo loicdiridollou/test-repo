@@ -15,7 +15,7 @@ authors = [
 requires-python = ">=3.10"
 license = {text = "MIT"}
 dependencies = [
-"matplotlib",
+  "matplotlib",
   "numpy",
   "pandas",
 ]
@@ -25,6 +25,18 @@ dependencies = [
 where = ["lib"]
 exclude = ["tests"]
 namespaces = false # Disable implicit namespaces
+
+[project.optional-dependencies]
+lint = [
+    "ruff",
+    "isort",
+    "black",
+]
+
+test = [
+    "pytest",
+    "pytest-cov",
+]
 
 [tool.ruff]
 line-length = 100
