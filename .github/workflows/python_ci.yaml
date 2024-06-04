@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build:
+    name: Build Pipeline
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +21,9 @@ jobs:
       - name: Lint the code
         run: |
           ruff lib/
+      - name: Typecheck the code
+        run: |
+          mypy lib/
       - name: Test with pytest
         run: |
           pytest lib -rxXs --cov-report=xml:coverage312.xml --cov lib
