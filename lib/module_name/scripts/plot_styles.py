@@ -150,13 +150,16 @@ def plot_figure(style_label=""):
     axs[4].add_artist(rec)
 
 
-if __name__ == "__main__":
+def main():
+    """
+    Set up a list of all available styles, in alphabetical order.
 
-    # Set up a list of all available styles, in alphabetical order but
-    # the `default` and `classic` ones, which will be forced resp. in
-    # first and second position.
-    # styles with leading underscores are for internal use such as testing
-    # and plot types gallery. These are excluded here.
+    but
+    the `default` and `classic` ones, which will be forced resp. in
+    first and second position.
+    styles with leading underscores are for internal use such as testing
+    and plot types gallery. These are excluded here.
+    """
     style_list = ["default", "classic"] + sorted(
         style
         for style in plt.style.available
@@ -170,3 +173,7 @@ if __name__ == "__main__":
                 plot_figure(style_label=style_label)
 
     plt.show()
+
+
+if __name__ == "__main__":
+    main()

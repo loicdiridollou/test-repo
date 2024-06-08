@@ -43,6 +43,9 @@ dev = [
   "module_name[lint,test]"
 ]
 
+[project.scripts]
+plttest = "module_name.scripts.plot_styles:main"
+
 [tool.ruff]
 line-length = 100
 target-version = "py312"
