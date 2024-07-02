@@ -1,6 +1,6 @@
 """Test new_file methods."""
 
-from module_name.new_file import function_one
+from test_repo.new_file import function_one
 
 
 def test_function_one():

@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "module_name"
+name = "test_repo"
 version = "0.1.0"
 description = "Description"
 authors = [
@@ -40,11 +40,11 @@ test = [
   "pytest-cov",
 ]
 dev = [
-  "module_name[lint,test]"
+  "test_repo[lint,test]"
 ]
 
 [project.scripts]
-plttest = "module_name.scripts.plot_styles:main"
+plttest = "test_repo.scripts.plot_styles:main"
 
 [tool.ruff]
 line-length = 100
@@ -76,5 +76,5 @@ pydocstyle.convention = "numpy"
 "lib/**/__init__.py" = ["D"]
 
 [tool.isort]
-known_first_party = ["module_name"]
+known_first_party = ["test_repo"]
 profile = "black"

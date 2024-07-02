@@ -20,7 +20,7 @@ jobs:
           pip install '.[lint,test]'
       - name: Lint the code
         run: |
-          ruff lib/
+          ruff check lib/
       - name: Typecheck the code
         run: |
           mypy lib/
