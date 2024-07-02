@@ -18,7 +18,7 @@ dependencies = [
   "matplotlib",
   "numpy",
   "pandas",
-  "pandas-stubs",
+  "seaborn",
 ]
 
 
@@ -29,10 +29,11 @@ namespaces = false # Disable implicit namespaces
 
 [project.optional-dependencies]
 lint = [
-  "ruff",
-  "isort",
   "black",
+  "isort",
   "mypy",
+  "pandas-stubs",
+  "ruff",
 ]
 
 test = [

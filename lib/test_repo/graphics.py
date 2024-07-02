@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn as sns
 from matplotlib.figure import Figure
 
 
@@ -70,4 +71,37 @@ def timeline(
         ax.set_title(title)
 
     plt.tight_layout()
+    return fig
+
+
+def scatter_label(
+    df: pd.DataFrame,
+    x_col: str,
+    y_col: str,
+    x_label: str = "",
+    y_label: str = "",
+    title: str = "",
+) -> Figure:
+    """Scatter plot with labels."""
+    fig = plt.figure(figsize=(8, 5))
+    sns.scatterplot(data=df, x=x_col, y=y_col)
+
+    for i in range(df.shape[0]):
+        plt.text(
+            x=df[x_col][i] + 0.3,
+            y=df[y_col][i] + 0.3,
+            s=df.Team[i],
+            fontdict=dict(color="red", size=10),
+            bbox=dict(facecolor="yellow", alpha=0.5),
+        )
+
+    if x_label:
+        plt.xlabel(x_label)
+    if y_label:
+        plt.ylabel(y_label)
+    if title:
+        plt.title(title)
+
+    plt.tight_layout()
+
     return fig
