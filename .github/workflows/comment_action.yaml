@@ -12,7 +12,7 @@ jobs:
     env:
       COMMENT: "/pandas_nightly"
     timeout-minutes: 10
-    if: (github.event.issue.pull_request) && github.event.comment.body == env.COMMENT
+    if: (github.event.issue.pull_request) && contains(fromJSON('["/pandas_nightly", "/pyright_strict"]'), github.event.comment.body) # == env.COMMENT
 
     steps:
       # - uses: actions/checkout@v4
