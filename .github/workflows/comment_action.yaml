@@ -3,15 +3,14 @@ on:
   issue_comment:
     types: created
 
-env:
-  COMMENT: "/pandas_nightly"
-
 permissions:
   checks: write
 
 jobs:
   pandas_nightly:
     runs-on: ubuntu-latest
+    env:
+      COMMENT: "/pandas_nightly"
     timeout-minutes: 10
     if: (github.event.issue.pull_request) && github.event.comment.body == env.COMMENT
 
