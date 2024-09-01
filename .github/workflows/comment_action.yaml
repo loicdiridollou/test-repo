@@ -13,7 +13,7 @@ jobs:
   pandas_nightly:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: (github.event.issue.pull_request) && github.event.comment.body == $COMMENT
+    if: (github.event.issue.pull_request) && github.event.comment.body == ${{ env.COMMENT }}
 
     steps:
       # - uses: actions/checkout@v4
