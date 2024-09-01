@@ -33,7 +33,7 @@ jobs:
 
       - name: Run pytest (against pandas nightly)
         id: tests-step
-        run: echo ${{ github.event.comment.body }}; echo ${{ fromJSON(env.RUN_COMMAND)[github.evenv.comment.body] }}; echo ${{ fromJSON(env.DISPLAY_COMMAND)[github.evenv.comment.body] }}
+        run: echo ${{ github.event.comment.body }}; echo ${{ fromJSON(env.RUN_COMMAND)[github.event.comment.body] }}; echo ${{ fromJSON(env.DISPLAY_COMMAND)[github.event.comment.body] }}
 
       # - name: Get head sha and store value
       #   if: always()
