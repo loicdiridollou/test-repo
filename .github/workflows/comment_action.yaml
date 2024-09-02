@@ -11,7 +11,8 @@ env:
   DISPLAY_COMMAND: '{"/pandas_nightly": "Pandas nightly tests", "/pyright_strict": "Pyright strict tests", "/mypy_nightly": "Mypy nightly tests"}'
 
 jobs:
-  pandas_nightly:
+  optional_tests:
+    name: "Optional tests run"
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: (github.event.issue.pull_request) && contains(fromJSON('["/pandas_nightly", "/pyright_strict"]'), github.event.comment.body) # == env.COMMENT
