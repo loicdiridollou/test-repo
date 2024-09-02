@@ -15,7 +15,7 @@ jobs:
     name: "Optional tests run"
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: (github.event.issue.pull_request) && contains(fromJSON('["/pandas_nightly", "/pyright_strict"]'), github.event.comment.body) # == env.COMMENT
+    if: (github.event.issue.pull_request) && contains(fromJSON('["/pandas_nightly", "/pyright_strict", "/mypy_nightly"]'), github.event.comment.body) # == env.COMMENT
 
     steps:
       # - uses: actions/checkout@v4
