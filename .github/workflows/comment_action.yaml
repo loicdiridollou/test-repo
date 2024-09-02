@@ -8,13 +8,11 @@ permissions:
 
 env:
   RUN_COMMAND: '{"/pandas_nightly": "pytest --nightly", "/pyright_strict": "pyright_strict", "/mypy_nightly": "mypy --mypy_nightly"}'
-  DISPLAY_COMMAND: '{"/pandas_nightly": "Run pandas nightly tests", "/pyright_strict": "Pyright strict tests", "/mypy_nightly": "Mypy nightly tests"}'
+  DISPLAY_COMMAND: '{"/pandas_nightly": "Pandas nightly tests", "/pyright_strict": "Pyright strict tests", "/mypy_nightly": "Mypy nightly tests"}'
 
 jobs:
   pandas_nightly:
     runs-on: ubuntu-latest
-    env:
-      COMMENT: "/pandas_nightly"
     timeout-minutes: 10
     if: (github.event.issue.pull_request) && contains(fromJSON('["/pandas_nightly", "/pyright_strict"]'), github.event.comment.body) # == env.COMMENT
 
@@ -31,7 +29,7 @@ jobs:
       #   id: tests-step
       #   run: poetry run poe pytest --nightly
 
-      - name: Run pytest (against pandas nightly)
+      - name: Run ${{ fromJSON(env.DISPLAY_COMMAND)[github.event.comment.body] }}
         id: tests-step
         run: echo ${{ github.event.comment.body }}; echo ${{ fromJSON(env.RUN_COMMAND)[github.event.comment.body] }}; echo ${{ fromJSON(env.DISPLAY_COMMAND)[github.event.comment.body] }}
 
