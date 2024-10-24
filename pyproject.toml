@@ -21,10 +21,12 @@ dependencies = [
   "seaborn",
 ]
 
+[tool.setuptools]
+include-package-data = false
 
 [tool.setuptools.packages.find]
 where = ["lib"]
-exclude = ["tests"]
+exclude = ["*tests*"]
 namespaces = false # Disable implicit namespaces
 
 [project.optional-dependencies]
