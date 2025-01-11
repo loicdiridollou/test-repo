@@ -39,7 +39,7 @@ jobs:
               repo: context.repo.repo,
               pull_number: ${{ github.event.issue.number }}
             })
-            console.log(pr)
+            console.log(pr.data.head.ref)
 
       - name: Extract branch name
         shell: bash
