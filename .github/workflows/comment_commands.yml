@@ -39,7 +39,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: steps.get-branch.outputs.branch
+          ref: ${{ steps.get-branch.outputs.branch }}
 
       - name: Print branch name
         run: git rev-parse --abbrev-ref HEAD
