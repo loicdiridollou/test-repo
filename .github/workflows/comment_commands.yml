@@ -34,12 +34,14 @@ jobs:
               repo: context.repo.repo,
               pull_number: ${{ github.event.issue.number }}
             })
-            console.log(pr.data.head)
+            console.log(pr.data.head.repo.full_name)
+            core.setOutput('repo', pr.data.head.repo.full_name)
             core.setOutput('branch', pr.data.head.ref)
 
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          repository: ${{ steps.get-branch.outputs.repo }}
           ref: ${{ steps.get-branch.outputs.branch }}
 
       - name: Print branch name
