@@ -34,7 +34,7 @@ jobs:
               repo: context.repo.repo,
               pull_number: ${{ github.event.issue.number }}
             })
-            console.log(pd.data.head)
+            console.log(pr.data.head)
             core.setOutput('branch', pr.data.head.ref)
 
       - name: Checkout code
