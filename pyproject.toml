@@ -52,7 +52,7 @@ plttest = "test_repo.scripts.plot_styles:main"
 
 [tool.ruff]
 line-length = 100
-target-version = "py312"
+target-version = "py313"
 
 [tool.ruff.lint]
 ignore = [
